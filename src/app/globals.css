@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+.transform-icon {
+  transition: transform 0.3s ease;
+}
+}
