@@ -62,10 +62,14 @@ export const NavBar = () => {
           {(ref) => (
             <nav
               ref={ref}
-              className="fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-hue-accent"
+              className="fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-gradient-to-b from-hue-primary to-hue-transparent"
             >
               {pages.map(([title, url]) => (
-                <Link key={title} className="text-xl font-bold" href={url}>
+                <Link
+                  key={title}
+                  className="text-xl font-extralight uppercase hover:animate-pulse"
+                  href={url}
+                >
                   {title}
                 </Link>
               ))}
