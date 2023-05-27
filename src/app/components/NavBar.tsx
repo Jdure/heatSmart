@@ -41,7 +41,7 @@ export const NavBar = () => {
             ></div>
           )}
         </Transition>
-        <div className="relative z-10 flex flex-row justify-between py-4 px-4 bg-hue-accent">
+        <div className="relative z-10 flex flex-row justify-between py-4 px-4 bg-gradient-to-b from-hue-accent to-hue-primary">
           <Image src={"/fake-logo.svg"} height={75} width={75} alt="logo" />
           <button
             onClick={openMenu}
