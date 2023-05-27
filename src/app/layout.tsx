@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { NavBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-primary">
+    <html lang="en" className="bg-hue-primary text-hue-base">
       <body className={inter.className}>
         <NavBar />
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --color-text-base: #000;
+  --color-text-base: #495464;
   --color-text-muted: #D6E0F0;
   --color-text-inverted: #fff;
-  --color-fill-primary: #F1F3F8;
-  --color-fill-secondary: #393B44;
-  --color-fill-accent: #8D93AB;
+  --color-fill-primary: #F4F4F2;
+  --color-fill-secondary: #BBBFCA;
+  --color-fill-accent: #E8E8E8;
 }
 
 @layer components {

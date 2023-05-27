@@ -14,10 +14,19 @@ module.exports = {
           inverted: "var(--color-text-inverted)",
         },
       },
+      backgroundColor: {
+        hue: {
+          primary: "var(--color-fill-primary)",
+          secondary: "var(--color-fill-secondary)",
+          accent: "var(--color-fill-accent)",
+        },
+      },
       colors: {
-        primary: "var(--color-fill-primary)",
-        secondary: "var(--color-fill-secondary)",
-        accent: "var(--color-fill-accent)",
+        hue: {
+          primary: "var(--color-fill-primary)",
+          secondary: "var(--color-fill-secondary)",
+          accent: "var(--color-fill-accent)",
+        },
       },
     },
   },

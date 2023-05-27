@@ -4,6 +4,7 @@ import React from "react";
 import { MdOutlineMenuOpen, MdClose } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Transition } from "@headlessui/react";
 
 export const NavBar = () => {
@@ -22,7 +23,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 text-hue-inverted">
+      <div className="fixed inset-0 z-50 text-hue-base">
         <Transition
           show={open}
           enter="transition-opacity duration-300 ease-in-out"
@@ -40,8 +41,8 @@ export const NavBar = () => {
             ></div>
           )}
         </Transition>
-        <div className="relative z-10 flex flex-row justify-between py-4 px-4 bg-secondary">
-          <p className="text-lg">Logo</p>
+        <div className="relative z-10 flex flex-row justify-between py-4 px-4 bg-hue-accent">
+          <Image src={"/fake-logo.svg"} height={75} width={75} alt="logo" />
           <button
             onClick={openMenu}
             className={`text-2xl transform-icon ${open ? "rotate-180" : ""}`}
@@ -59,16 +60,16 @@ export const NavBar = () => {
           leaveTo="translate-x-full"
         >
           {(ref) => (
-            <div
+            <nav
               ref={ref}
-              className="fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-secondary"
+              className="fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-hue-accent"
             >
               {pages.map(([title, url]) => (
-                <Link key={title} className="text-2xl font-bold" href={url}>
+                <Link key={title} className="text-xl font-bold" href={url}>
                   {title}
                 </Link>
               ))}
-            </div>
+            </nav>
           )}
         </Transition>
       </div>
