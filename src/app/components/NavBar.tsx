@@ -23,7 +23,9 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 text-hue-base">
+      <div
+        className={`absolute inset-0 ${open ? "z-50" : "z-40"} text-hue-base`}
+      >
         <Transition
           show={open}
           enter="transition-opacity duration-300 ease-in-out"
@@ -55,14 +57,16 @@ export const NavBar = () => {
           enter="transition-transform duration-500 ease-in-out"
           enterFrom="translate-x-full"
           enterTo="translate-x-0"
-          leave="transition-transform duration-500 ease-in-out"
+          leave="transition-transform duration-0 ease-in-out"
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
           {(ref) => (
             <nav
               ref={ref}
-              className="fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-gradient-to-b from-hue-primary to-hue-transparent"
+              className={`fixed inset-y-0 right-0 ${
+                open ? "z-50" : "z-40"
+              } flex flex-col items-center justify-start pt-10 space-y-12 min-h-screen w-64 bg-gradient-to-b from-hue-primary to-hue-transparent`}
             >
               {pages.map(([title, url]) => (
                 <Link
