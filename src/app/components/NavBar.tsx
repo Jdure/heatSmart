@@ -16,9 +16,9 @@ export const NavBar = () => {
 
   const pages = [
     ["Home", "/"],
-    ["Gallery", "/gallery"],
+    ["Gallery", "#"],
     ["Services", "/services"],
-    ["Request", "/request"],
+    ["Request", "#"],
   ];
 
   return (
