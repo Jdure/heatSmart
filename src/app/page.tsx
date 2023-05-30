@@ -32,9 +32,9 @@ export default function Home() {
         </div>
       </div>
       <div className="container flex flex-col">
-        <div className="flex flex-col p-2 items-start justify-evenly h-72 bg-hue-secondary z-40">
+        <div className="flex flex-col p-2 items-center justify-evenly h-72 bg-hue-secondary z-40">
           <h2 className="text-xl text-hue-inverted font-medium">Our Mission</h2>
-          <p className="text-lg text-hue-inverted">
+          <p className="text-lg w-11/12 text-hue-inverted">
             Experience the ultimate solution for a hassle-free winter with our
             cutting-edge driveway heating systems. Say goodbye to snow and ice,
             as our innovative technology keeps your driveway warm and clear.

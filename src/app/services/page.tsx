@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Pagination } from "../components/Pagination";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Services() {
   const [hovered, setHovered] = useState(false);
@@ -22,8 +23,8 @@ export default function Services() {
           </h2>
           <p
             className={`text-lg text-justify w-11/12 ${
-              hovered ? "opacity-100" : "opacity-0 hidden"
-            } transition-opacity duration-300 delay-700 ease-in-out`}
+              hovered ? "opacity-100 " : "opacity-0 hidden"
+            } transition-opacity duration-1000 delay-500 ease-in-out `}
           >
             Experience the ultimate solution for a hassle-free winter with our
             cutting-edge driveway heating systems. Say goodbye to snow and ice,
@@ -31,7 +32,14 @@ export default function Services() {
             Embrace convenience and safety with our reliable and efficient
             solutions for a seamless winter experience.
           </p>
-          <Pagination pageIdx={"1"} maxLength={"1"} />
+          <div className={`${hovered ? "block" : "hidden"}`}>
+            <Pagination pageIdx={"1"} maxLength={"1"} />
+          </div>
+          <MdKeyboardArrowDown
+            className={`text-3xl animate-bounce ${
+              hovered ? "hidden" : "block"
+            }`}
+          />
         </div>
         <div className="bg-[url('https://dummyimage.com/720x720')] bg-cover bg-center h-2/3 w-full absolute inset-x-0 bottom-2"></div>
       </div>

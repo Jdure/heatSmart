@@ -73,6 +73,7 @@ export const NavBar = () => {
                   key={title}
                   className="text-xl font-light uppercase hover:animate-pulse"
                   href={url}
+                  onClick={() => isOpen(false)}
                 >
                   {title}
                 </Link>
