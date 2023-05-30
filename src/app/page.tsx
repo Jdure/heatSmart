@@ -14,7 +14,7 @@ export default function Home() {
         />
         <h1 className="text-xl font-bold">HeatSmart Solutions</h1>
         <p className="w-11/12 font-light">
-          Unleash the Power of Heat: Your Perfect Pathway, Every Winter
+          Unleash the Power of Heat - Your Perfect Pathway, Every Winter
         </p>
         <div className="flex flex-row justify-normal items-center">
           <LinkButton
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container flex flex-col">
-        <div className="flex flex-col p-2 items-center justify-evenly h-72 bg-hue-secondary z-40">
+        <div className="flex flex-col p-2 items-start justify-evenly h-72 bg-hue-secondary z-40">
           <h2 className="text-xl text-hue-inverted font-medium">Our Mission</h2>
           <p className="text-lg text-hue-inverted">
             Experience the ultimate solution for a hassle-free winter with our
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
         <div className="bg-[url('https://dummyimage.com/720x720')] bg-cover bg-center h-80 w-full"></div>
       </div>
-      <div className="container flex flex-col items-center justify-evenly p-2 space-y-4">
+      <div className="container flex flex-col items-start justify-evenly p-2 space-y-4">
         <h2 className="text-xl font-medium">Contact Us</h2>
         <p>Reach out to us for all your driveway heating needs.</p>
         <p>Our expert team is ready to assist you. Contact us today!</p>

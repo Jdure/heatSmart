@@ -1,0 +1,44 @@
+{
+  "serviceOfferings": [
+    {
+      "title": "Driveway Heating System Installation",
+      "description": "Professional installation of advanced driveway heating systems tailored to your specific requirements, ensuring a snow-free and safe driveway during winter."
+    },
+    {
+      "title": "Maintenance and Repair Services",
+      "description": "Comprehensive maintenance and repair solutions for your existing driveway heating system, maximizing its efficiency, lifespan, and performance."
+    },
+    {
+      "title": "Retrofitting and Upgrades",
+      "description": "Enhance your current driveway with our retrofitting and upgrade services, integrating state-of-the-art heating technology for improved functionality and energy efficiency."
+    },
+    {
+      "title": "Design Consultation",
+      "description": "Collaborative design consultations to help you select the ideal driveway heating solution, considering factors such as layout, budget, and aesthetic preferences."
+    },
+    {
+      "title": "Energy-Efficient Solutions",
+      "description": "Explore our range of energy-efficient driveway heating systems designed to minimize power consumption while delivering exceptional performance."
+    },
+    {
+      "title": "Customized Controls and Automation",
+      "description": "Experience convenience and control with our customized control systems, allowing you to manage and monitor your driveway heating remotely."
+    },
+    {
+      "title": "Emergency Repair Services",
+      "description": "Swift and responsive emergency repair services to address any unexpected issues with your driveway heating system, ensuring uninterrupted functionality."
+    },
+    {
+      "title": "Consulting and Planning",
+      "description": "Expert consulting and planning services for new construction or renovation projects, assisting you in integrating a reliable and efficient driveway heating system from the start."
+    },
+    {
+      "title": "Energy Savings Analysis",
+      "description": "In-depth analysis of energy usage and potential savings, providing insights on optimizing your driveway heating system for cost-effective operation."
+    },
+    {
+      "title": "Educational Resources",
+      "description": "Access to informative resources, guides, and tips to help you make informed decisions, understand the benefits of driveway heating, and optimize its usage."
+    }
+  ]
+}
