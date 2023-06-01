@@ -1,0 +1,54 @@
+{
+  "customerBase": [
+    {
+      "title": "Homeowners",
+      "description": "Residential customers who want to enhance their living experience by having a snow-free and safe driveway during winter.",
+      "icon": "🏠"
+    },
+    {
+      "title": "Commercial Property Owners",
+      "description": "Business owners or property managers who prioritize safety and accessibility for their customers, employees, and tenants by investing in reliable driveway heating systems.",
+      "icon": "🏢"
+    },
+    {
+      "title": "Contractors and Builders",
+      "description": "Construction professionals who seek reliable driveway heating solutions for new construction or renovation projects, adding value and convenience to their clients' properties.",
+      "icon": "👷"
+    },
+    {
+      "title": "Property Management Companies",
+      "description": "Companies that manage residential or commercial properties and are responsible for maintaining the driveways of their properties.",
+      "icon": "🏘️"
+    },
+    {
+      "title": "Homeowners Associations (HOAs)",
+      "description": "HOAs that aim to provide a safe and well-maintained environment for their community members, including snow-free driveways.",
+      "icon": "🏡"
+    },
+    {
+      "title": "Municipalities and Government Agencies",
+      "description": "Local governments or public institutions that prioritize public safety and want to ensure snow-free roadways and parking areas.",
+      "icon": "🏛️"
+    },
+    {
+      "title": "Hospitality Industry",
+      "description": "Hotels, resorts, and other hospitality establishments that want to provide a pleasant and safe experience for their guests, including snow-free driveways and parking spaces.",
+      "icon": "🏨"
+    },
+    {
+      "title": "Retail Centers and Shopping Malls",
+      "description": "Retail property owners or managers who want to ensure smooth traffic flow and safe parking areas for shoppers during winter.",
+      "icon": "🛍️"
+    },
+    {
+      "title": "Educational Institutions",
+      "description": "Schools, colleges, and universities that want to ensure the safety and accessibility of their campuses by investing in reliable driveway heating systems.",
+      "icon": "🎓"
+    },
+    {
+      "title": "Healthcare Facilities",
+      "description": "Hospitals, clinics, and healthcare centers that prioritize the safety and accessibility of their facilities for patients, visitors, and emergency services.",
+      "icon": "🏥"
+    }
+  ]
+}

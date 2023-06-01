@@ -9,7 +9,7 @@ export default function Services() {
 
   return (
     <>
-      <h1 className="text-2xl text-center pt-12">Our Services</h1>
+      <h1 className="text-2xl text-center font-bold pt-12">Our Services</h1>
       <div className="container flex flex-col relative h-screen ">
         <div
           className={`flex flex-col p-2 items-center justify-center ${
