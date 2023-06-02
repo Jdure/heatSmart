@@ -2,25 +2,32 @@
 
 import { ServiceCard } from "../components/ServiceCard";
 import data from "../../../data/customers.json";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../../utils/useIntersectionObserver";
 import { LinkButton } from "../components/LinkButton";
 
-// TODO: Add IntersectionObserver
+// TODO: Add Slide in (odd = left, even equal right) animation for cards
+// TODO: Make non visible cards disappear
+// TODO: Add Loading animation
 
 export default function About() {
-  // const [arrIdx, setArrIdx] = useState(3);
+  const [arrIdx, setArrIdx] = useState(3);
   const divRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(divRef);
 
   console.log({ isOnScreen });
 
-  let arrIdx = 2;
   const serviceData = data.customerBase.slice(0, arrIdx);
 
   const loadMoreData = () => {
-    arrIdx++;
+    setArrIdx(arrIdx + 1);
   };
+
+  useEffect(() => {
+    if (isOnScreen == true) {
+      loadMoreData();
+    }
+  });
 
   return (
     <>
@@ -49,10 +56,7 @@ export default function About() {
         />
       </div>
       <h2 className="text-xl text-center font-medium">Who we serve</h2>
-      <div
-        ref={divRef}
-        className="flex flex-col items-center justify-center space-y-10"
-      >
+      <div className="flex flex-col items-center justify-center space-y-10">
         {serviceData.map((value, index) => (
           <ServiceCard
             key={index}
@@ -62,6 +66,11 @@ export default function About() {
           />
         ))}
       </div>
+      {arrIdx <= serviceData.length ? (
+        <div ref={divRef} className="mx-auto">
+          Loading....
+        </div>
+      ) : null}
     </>
   );
 }

@@ -71,7 +71,7 @@ export const NavBar = () => {
               {pages.map(([title, url]) => (
                 <Link
                   key={title}
-                  className="text-xl font-light uppercase hover:animate-pulse"
+                  className="text-xl font-medium uppercase hover:animate-pulse"
                   href={url}
                   onClick={() => isOpen(false)}
                 >
