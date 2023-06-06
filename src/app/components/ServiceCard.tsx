@@ -12,7 +12,7 @@ export const ServiceCard = ({
   return (
     <a
       href="#"
-      className="relative block rounded-sm border-t-4 border-hue-secondary p-4 shadow-xl w-11/12 sm:p-6 lg:p-8"
+      className="relative block rounded-sm border-t-4 border-hue-secondary p-4 shadow-xl w-11/12 sm:p-6 lg:p-8 motion-safe:animate-fadeIn"
     >
       <div className="flex items-center gap-4 rounded-md">
         {/* <svg

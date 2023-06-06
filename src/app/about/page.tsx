@@ -6,28 +6,25 @@ import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../../utils/useIntersectionObserver";
 import { LinkButton } from "../components/LinkButton";
 
-// TODO: Add Slide in (odd = left, even equal right) animation for cards
-// TODO: Make non visible cards disappear
-// TODO: Add Loading animation
-
 export default function About() {
-  const [arrIdx, setArrIdx] = useState(3);
+  const [arrIdx, setArrIdx] = useState(1); // Start with 1 card
   const divRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(divRef);
 
-  console.log({ isOnScreen });
-
-  const serviceData = data.customerBase.slice(0, arrIdx);
+  const serviceData = data.customerBase;
 
   const loadMoreData = () => {
     setArrIdx(arrIdx + 1);
   };
 
   useEffect(() => {
-    if (isOnScreen == true) {
+    if (isOnScreen && arrIdx <= serviceData.length) {
       loadMoreData();
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOnScreen]);
+
+  const visibleServiceData = serviceData.slice(0, arrIdx);
 
   return (
     <>
@@ -57,7 +54,7 @@ export default function About() {
       </div>
       <h2 className="text-xl text-center font-medium">Who we serve</h2>
       <div className="flex flex-col items-center justify-center space-y-10">
-        {serviceData.map((value, index) => (
+        {visibleServiceData.map((value, index) => (
           <ServiceCard
             key={index}
             title={value.title}
@@ -67,8 +64,11 @@ export default function About() {
         ))}
       </div>
       {arrIdx <= serviceData.length ? (
-        <div ref={divRef} className="mx-auto">
-          Loading....
+        <div ref={divRef} className="mx-auto pt-16">
+          <div
+            className="w-12 h-12 rounded-full animate-spin
+                    border-2 border-solid border-hue-secondary border-t-transparent"
+          ></div>
         </div>
       ) : null}
     </>
