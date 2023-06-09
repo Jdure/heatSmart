@@ -25,7 +25,7 @@ export default function Home() {
           />
           <LinkButton
             btnTxt={"Free Quote"}
-            path={"/request"}
+            path={"/requests"}
             btnColor={"transparent"}
             txtColor={"text-hue-base"}
           />
