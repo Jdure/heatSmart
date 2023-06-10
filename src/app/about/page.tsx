@@ -12,13 +12,16 @@ export default function About() {
   const [arrIdx, setArrIdx] = useState(1); // Start with 1 card
   const divRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(divRef);
+  const screenWidth = window.innerWidth;
 
   const serviceData = data.customerBase;
 
   console.log(isOnScreen);
+  console.log(`Screen width: ${screenWidth}`);
 
+  // NOTE: Look at this later
   const loadMoreData = () => {
-    setArrIdx(arrIdx + 1);
+    screenWidth >= 768 ? setArrIdx(arrIdx + 2) : setArrIdx(arrIdx + 1);
   };
 
   useEffect(() => {
