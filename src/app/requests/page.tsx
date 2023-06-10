@@ -22,6 +22,17 @@ type Inputs = {
   date: Date | string;
 };
 
+/**
+ * 
+ * TODO: Media Queries
+ * 
+ * 1. Small Tablets - 640px
+ * 2. Large Tablets - 768px
+ * 2. Laptops - 1024px
+ * 3. Large Monitors - 4K+
+ * 
+ */
+
 export default function Requests() {
   const {
     register,
@@ -34,11 +45,11 @@ export default function Requests() {
 
   return (
     <>
-      <h1 className="text-2xl text-center font-bold pt-12">
-        Start Your Project with a Quote!
-      </h1>
-      <div className="flex flex-col items-center justify-start h-screen z-40">
-        <div className="flex flex-col items-center h-2/5 w-11/12 text-justify text-lg space-y-6">
+      <div className="container flex flex-col items-center justify-start h-screen z-40 sm:flex-row">
+        <div className="flex flex-col items-center h-2/5 w-11/12 text-justify text-lg space-y-6 sm:text-xl sm:h-5/6 sm:w-1/2 sm:items-start sm:justify-start sm:space-y-8 sm:text-justify">
+          <h1 className="text-2xl text-center font-bold pt-12 sm:text-4xl">
+            Let&apos;s get to work!
+          </h1>
           <p>
             To get started, please fill out the form below with your contact
             details and project requirements.
@@ -46,20 +57,21 @@ export default function Requests() {
           <p>
             Our team will review your information and get back to you promptly.
           </p>
-          <p>
+          <p className="sm:pb-12">
             We look forward to working with you and providing a tailored
             solution to meet your needs.
           </p>
-          {/* <div className="bg-[url('https://dummyimage.com/720x720')] bg-cover bg-center h-12 w-full rounded-md"></div> */}
+          <div className="bg-[url('https://dummyimage.com/720x720')] hidden sm:block bg-cover bg-center h-72 w-full rounded-md"></div>
         </div>
-        <div className="flex flex-col items-center w-11/12 min-w-xs pt-6">
-          <h2 className="text-xl font-bold pb-4">
-            Get in Contact with Our Experts!
-          </h2>
+        <div className="flex flex-col items-center w-11/12 min-w-xs pt-6 sm:w-1/2 sm:justify-center sm:pt-0 sm:h-5/6">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col space-y-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 text-lg"
+            className="flex flex-col space-y-10 bg-stone-700 text-hue-inverted shadow-md rounded px-8 pt-6 pb-8 mb-4 text-lg sm:w-2/3"
           >
+            <h2 className="text-xl font-bold pb-4">Enter your details</h2>
+            <p className="text-sm font-thin text-hue-muted">
+              Fill in the form to receive your complimentary quote
+            </p>
             <div className="flex flex-col space-y-2">
               <label>Full Name</label>
               <input
@@ -86,7 +98,7 @@ export default function Requests() {
               </label>
               <select
                 {...register("serviceType", { required: true })}
-                className="text-center"
+                className="shadow appearance-none border rounded text-center py-2 px-3 text-hue-base leading-tight"
                 name="serviceType"
                 id="service-type"
               >
