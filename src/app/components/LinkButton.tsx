@@ -14,7 +14,7 @@ export const LinkButton = ({
 }) => {
   return (
     <Link
-      className={`group relative inline-flex items-center overflow-hidden rounded ${btnColor} px-8 py-3 text-hue-inverted focus:outline-none focus:ring active:${btnColor}`}
+      className={`group relative inline-flex items-center overflow-hidden rounded ${btnColor} phone:px-8 tablet:px-14 phone:py-3 text-hue-inverted focus:outline-none focus:ring active:${btnColor}`}
       href={path}
     >
       <span
@@ -37,7 +37,7 @@ export const LinkButton = ({
       </span>
 
       <span
-        className={`text-sm ${txtColor} font-medium transition-all group-hover:me-4`}
+        className={`phone:text-sm tablet:text-base laptop:text-lg ${txtColor} font-medium transition-all group-hover:me-4`}
       >
         {btnTxt}
       </span>

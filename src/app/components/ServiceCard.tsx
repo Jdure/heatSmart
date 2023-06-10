@@ -10,31 +10,16 @@ export const ServiceCard = ({
   icon: string;
 }) => {
   return (
-    <a
-      href="#"
-      className="relative block rounded-sm border-t-4 border-hue-secondary p-4 shadow-xl w-11/12 sm:p-6 lg:p-8 motion-safe:animate-fadeIn"
-    >
-      <div className="flex items-center gap-4 rounded-md">
-        {/* <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-hue-secondary sm:h-8 sm:w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg> */}
-        <span className="h-6 w-6 text-hue-secondary sm:h-8 sm:w-8">{icon}</span>
+    <a className="flex flex-col items-center justify-center border-t-4 shadow-xl border-hue-secondary rounded-sm p-4 motion-safe:animate-fadeIn">
+      <div className="flex items-center gap-4 mb-4 rounded-md">
+        <span className="h-6 w-6 text-hue-secondary tablet:h-8 tablet:w-8">
+          {icon}
+        </span>
 
-        <h3 className="text-2xl font-medium sm:text-4xl">{title}</h3>
+        <h3 className="font-medium phone:text-lg tablet:text-xl">{title}</h3>
       </div>
 
-      <p className="mt-4 font-medium text-hue-base">{desc}</p>
+      <p className=" font-medium text-hue-base">{desc}</p>
     </a>
   );
 };

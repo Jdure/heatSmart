@@ -6,12 +6,16 @@ import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../../utils/useIntersectionObserver";
 import { LinkButton } from "../components/LinkButton";
 
+// FIXME: Intersection observer when loading more data 
+
 export default function About() {
   const [arrIdx, setArrIdx] = useState(1); // Start with 1 card
   const divRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(divRef);
 
   const serviceData = data.customerBase;
+
+  console.log(isOnScreen);
 
   const loadMoreData = () => {
     setArrIdx(arrIdx + 1);
@@ -21,6 +25,7 @@ export default function About() {
     if (isOnScreen && arrIdx <= serviceData.length) {
       loadMoreData();
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOnScreen]);
 
@@ -28,8 +33,10 @@ export default function About() {
 
   return (
     <>
-      <h1 className="text-2xl text-center pt-12 font-bold">Our Approach</h1>
-      <div className="container flex flex-col items-center justify-evenly text-justify text-lg w-11/12 space-y-6 z-40">
+      <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center ">
+        Our Approach
+      </h1>
+      <div className="container flex flex-col phone:items-center phone:justify-evenly phone:text-justify laptop:items-start phone:text-base tablet:text-lg laptop:text-xl desktop:text-2xl phone:w-11/12 phone:space-y-6 z-40">
         <p>
           At HeatSmart Solutions, we are driven by our passion for providing
           innovative driveway heating solutions that transform winter
@@ -47,13 +54,15 @@ export default function About() {
         </p>
         <LinkButton
           btnTxt={"Get a Quote"}
-          path={"/"}
+          path={"/requests"}
           btnColor={"bg-hue-secondary"}
           txtColor={"text-hue-base"}
         />
       </div>
-      <h2 className="text-xl text-center font-medium">Who we serve</h2>
-      <div className="flex flex-col items-center justify-center space-y-10">
+      <h2 className="font-medium phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center ">
+        Who we serve
+      </h2>
+      <div className="container grid grid-cols-1 gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
         {visibleServiceData.map((value, index) => (
           <ServiceCard
             key={index}
@@ -64,7 +73,7 @@ export default function About() {
         ))}
       </div>
       {arrIdx <= serviceData.length ? (
-        <div ref={divRef} className="mx-auto pt-16">
+        <div ref={divRef} className="mx-auto phone:pt-48">
           <div
             className="w-12 h-12 rounded-full animate-spin
                     border-2 border-solid border-hue-secondary border-t-transparent"
