@@ -26,10 +26,11 @@ type Inputs = {
  * 
  * TODO: Media Queries
  * 
- * 1. Small Tablets - 640px
- * 2. Large Tablets - 768px
- * 2. Laptops - 1024px
- * 3. Large Monitors - 4K+
+ * 1. phone: "480px",
+      tablet: "640px",
+      laptop: "1024px",
+      desktop: "1280px",
+ * 3. 
  * 
  */
 
@@ -45,9 +46,9 @@ export default function Requests() {
 
   return (
     <>
-      <div className="container flex flex-col items-center justify-start h-screen z-40 sm:flex-row">
-        <div className="flex flex-col items-center h-2/5 w-11/12 text-justify text-lg space-y-6 sm:text-xl sm:h-5/6 sm:w-1/2 sm:items-start sm:justify-start sm:space-y-8 sm:text-justify">
-          <h1 className="text-2xl text-center font-bold pt-12 sm:text-4xl">
+      <div className="container flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row">
+        <div className="flex flex-col items-center phone:basis-1/2 w-11/12 text-justify text-lg space-y-6 tablet:text-xl tablet:h-5/6 tablet:w-1/2 tablet:items-start tablet:justify-start tablet:space-y-8 tablet:text-justify">
+          <h1 className="text-2xl text-center font-bold pt-12 tablet:text-4xl">
             Let&apos;s get to work!
           </h1>
           <p>
@@ -57,18 +58,19 @@ export default function Requests() {
           <p>
             Our team will review your information and get back to you promptly.
           </p>
-          <p className="sm:pb-12">
+          <p className="tablet:pb-12">
             We look forward to working with you and providing a tailored
             solution to meet your needs.
           </p>
-          <div className="bg-[url('https://dummyimage.com/720x720')] hidden sm:block bg-cover bg-center h-72 w-full rounded-md"></div>
+          <div className="bg-[url('https://dummyimage.com/720x720')] hidden tablet:block bg-cover bg-center h-72 w-full rounded-md"></div>
         </div>
-        <div className="flex flex-col items-center w-11/12 min-w-xs pt-6 sm:w-1/2 sm:justify-center sm:pt-0 sm:h-5/6">
+        <div className="flex flex-col items-center w-4/6 min-w-xs pt-6 phone:basis-1/2 phone:pt-8 tablet:w-1/2 tablet:justify-center tablet:pt-0 tablet:h-5/6">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col space-y-10 bg-stone-700 text-hue-inverted shadow-md rounded px-8 pt-6 pb-8 mb-4 text-lg sm:w-2/3"
+            className="flex flex-col bg-stone-600 text-hue-inverted shadow-md rounded px-8 pt-6 pb-8 mb-4 phone:text-base tablet:text-lg phone:space-y-6 tablet:w-2/3"
           >
-            <h2 className="text-xl font-bold pb-4">Enter your details</h2>
+            <h2 className="text-xl font-bold">Enter your details</h2>
+
             <p className="text-sm font-thin text-hue-muted">
               Fill in the form to receive your complimentary quote
             </p>
