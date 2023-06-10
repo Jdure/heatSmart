@@ -22,18 +22,6 @@ type Inputs = {
   date: Date | string;
 };
 
-/**
- * 
- * TODO: Media Queries
- * 
- * 1. phone: "480px",
-      tablet: "640px",
-      laptop: "1024px",
-      desktop: "1280px",
- * 3. 
- * 
- */
-
 export default function Requests() {
   const {
     register,
@@ -46,9 +34,9 @@ export default function Requests() {
 
   return (
     <>
-      <div className="container flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row">
-        <div className="flex flex-col items-center phone:basis-1/2 w-11/12 text-justify text-lg space-y-6 tablet:text-xl tablet:h-5/6 tablet:w-1/2 tablet:items-start tablet:justify-start tablet:space-y-8 tablet:text-justify">
-          <h1 className="text-2xl text-center font-bold pt-12 tablet:text-4xl">
+      <div className="container flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row tablet:min-w-fit">
+        <div className="flex flex-col items-center laptop:items-start phone:basis-1/2 space-y-6 tablet:basis-3/5 phone:w-11/12 tablet:m-1.5  phone:text-center laptop:text-justify text-base tablet:text-lg laptop:text-xl desktop:text-2xl">
+          <h1 className="text-2xl text-center font-bold pt-12 tablet:text-2xl laptop:text-4xl">
             Let&apos;s get to work!
           </h1>
           <p>
@@ -64,10 +52,10 @@ export default function Requests() {
           </p>
           <div className="bg-[url('https://dummyimage.com/720x720')] hidden tablet:block bg-cover bg-center h-72 w-full rounded-md"></div>
         </div>
-        <div className="flex flex-col items-center w-4/6 min-w-xs pt-6 phone:basis-1/2 phone:pt-8 tablet:w-1/2 tablet:justify-center tablet:pt-0 tablet:h-5/6">
+        <div className="flex flex-col items-center w-4/6 min-w-xs pt-6 phone:pt-8 phone:basis-2/5 tablet:basis-1/4 tablet:h-screen tablet:justify-center">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col bg-stone-600 text-hue-inverted shadow-md rounded px-8 pt-6 pb-8 mb-4 phone:text-base tablet:text-lg phone:space-y-6 tablet:w-2/3"
+            className="flex flex-col bg-stone-600 text-hue-inverted shadow-md rounded phone:px-8 phone:pt-6 phone:pb-8 phone:mb-4 phone:text-base tablet:m-6 laptop:m-8 laptop:text-lg desktop:text-2xl phone:space-y-6"
           >
             <h2 className="text-xl font-bold">Enter your details</h2>
 
