@@ -3,26 +3,23 @@
 import { ServiceCard } from "../components/ServiceCard";
 import data from "../../../data/customers.json";
 import { useEffect, useRef, useState } from "react";
-import useOnScreen from "../../../utils/useIntersectionObserver";
+import useOnScreen from "../../../utils/useOnScreenHook";
 import { LinkButton } from "../components/LinkButton";
 
-// FIXME: Intersection observer when loading more data 
+// FIXME: Intersection observer when loading more data
 
 export default function About() {
-  const [arrIdx, setArrIdx] = useState(1); // Start with 1 card
+  const [arrIdx, setArrIdx] = useState(0); // Start with 1 card
   const divRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(divRef);
-  const screenWidth = window.innerWidth;
 
   const serviceData = data.customerBase;
 
   console.log(isOnScreen);
-  console.log(`Screen width: ${screenWidth}`);
 
   // NOTE: Look at this later
   const loadMoreData = () => {
-    screenWidth >= 768 ? setArrIdx(arrIdx + 2) : setArrIdx(arrIdx + 1);
-
+    setArrIdx(arrIdx + 3);
   };
 
   useEffect(() => {
@@ -77,7 +74,7 @@ export default function About() {
         ))}
       </div>
       {arrIdx <= serviceData.length ? (
-        <div ref={divRef} className="mx-auto phone:pt-48">
+        <div ref={divRef} className="mx-auto">
           <div
             className="w-12 h-12 rounded-full animate-spin
                     border-2 border-solid border-hue-secondary border-t-transparent"

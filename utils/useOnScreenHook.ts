@@ -7,6 +7,7 @@ export default function useOnScreen(ref: RefObject<HTMLElement | Element>) {
   useEffect(() => {
     const observerOptions = {
       threshold: 1,
+      rootMargin: "0px 0px 300px 0px",
     };
     (observerRef.current = new IntersectionObserver(([entry]) =>
       setIsOnScreen(entry.isIntersecting)
