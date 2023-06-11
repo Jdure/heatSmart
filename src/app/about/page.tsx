@@ -22,6 +22,7 @@ export default function About() {
   // NOTE: Look at this later
   const loadMoreData = () => {
     screenWidth >= 768 ? setArrIdx(arrIdx + 2) : setArrIdx(arrIdx + 1);
+
   };
 
   useEffect(() => {
