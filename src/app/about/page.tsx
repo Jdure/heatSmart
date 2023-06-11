@@ -36,10 +36,10 @@ export default function About() {
 
   return (
     <>
-      <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center ">
+      <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center laptop:text-start laptop:ml-3">
         Our Approach
       </h1>
-      <div className="container flex flex-col phone:items-center phone:justify-evenly phone:text-justify laptop:items-start phone:text-base tablet:text-lg laptop:text-xl desktop:text-2xl phone:w-11/12 phone:space-y-6 z-40">
+      <div className="container flex flex-col phone:items-center phone:justify-evenly phone:text-justify laptop:items-start phone:text-base tablet:text-lg laptop:text-xl laptop:ml-3 desktop:text-2xl phone:w-11/12 phone:space-y-6 z-40">
         <p>
           At HeatSmart Solutions, we are driven by our passion for providing
           innovative driveway heating solutions that transform winter
@@ -51,7 +51,7 @@ export default function About() {
           reliability. Our commitment to quality and customer satisfaction is at
           the core of everything we do.
         </p>
-        <p>
+        {/* <p>
           Join us on this journey as we revolutionize winter comfort and safety,
           one driveway at a time.
         </p>
@@ -60,12 +60,30 @@ export default function About() {
           path={"/requests"}
           btnColor={"bg-hue-secondary"}
           txtColor={"text-hue-base"}
-        />
+        /> */}
       </div>
-      <h2 className="font-medium phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center ">
+      <div className="text-hue-base bg-hue-accent z-40">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="laptop:w-full flex flex-col tablet:flex-row tablet:items-center items-start mx-auto">
+            <h1 className="flex-grow tablet:pr-16 phone:text-base tablet:text-lg laptop:text-2xl font-medium title-font">
+              Join us on this journey as we revolutionize winter comfort and
+              safety, one driveway at a time.
+            </h1>
+            <div className="flex-shrink-0 phone:mt-10 tablet:mt-0">
+              <LinkButton
+                btnTxt={"Get a Quote"}
+                path={"/requests"}
+                btnColor={"bg-hue-secondary"}
+                txtColor={"text-hue-base"}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 className="font-medium phone:text-xl tablet:text-2xl laptop:text-3xl desktop:text-5xl phone:text-center laptop:text-start laptop:ml-3">
         Who we serve
       </h2>
-      <div className="container grid grid-cols-1 gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-4 tablet:grid-cols-2 laptop:grid-cols-3 laptop:mx-auto">
         {visibleServiceData.map((value, index) => (
           <ServiceCard
             key={index}
