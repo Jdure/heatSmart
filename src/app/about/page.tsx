@@ -1,34 +1,36 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { ServiceCard } from "../components/ServiceCard";
 import data from "../../../data/customers.json";
 import { useEffect, useRef, useState } from "react";
-import useOnScreen from "../../../utils/useOnScreenHook";
-import { LinkButton } from "../components/LinkButton";
 
-// FIXME: Intersection observer when loading more data
+import { LinkButton } from "../components/LinkButton";
+import { useIntersectionObserver, useScreen } from "usehooks-ts";
 
 export default function About() {
-  const [arrIdx, setArrIdx] = useState(0); // Start with 1 card
-  const divRef = useRef<HTMLDivElement>(null);
-  const isOnScreen = useOnScreen(divRef);
+  const [arrIdx, setArrIdx] = useState(3);
+  const refDiv = useRef<HTMLDivElement | null>(null);
+  const screen = useScreen();
+  const entry = useIntersectionObserver(refDiv, {
+    rootMargin: "0px 0px 200px 0px",
+    threshold: 1,
+  });
+  const isVisible = !!entry?.isIntersecting;
 
   const serviceData = data.customerBase;
 
-  console.log(isOnScreen);
-
-  // NOTE: Look at this later
   const loadMoreData = () => {
-    setArrIdx(arrIdx + 3);
+    if (screen?.width !== undefined) {
+      screen?.width >= 640 ? setArrIdx(arrIdx + 3) : setArrIdx(arrIdx + 1);
+    }
   };
 
   useEffect(() => {
-    if (isOnScreen && arrIdx <= serviceData.length) {
+    if (isVisible) {
       loadMoreData();
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOnScreen]);
+  }, [isVisible]);
 
   const visibleServiceData = serviceData.slice(0, arrIdx);
 
@@ -74,8 +76,9 @@ export default function About() {
         ))}
       </div>
       {arrIdx <= serviceData.length ? (
-        <div ref={divRef} className="mx-auto">
+        <div id="loading" className="mx-auto">
           <div
+            ref={refDiv}
             className="w-12 h-12 rounded-full animate-spin
                     border-2 border-solid border-hue-secondary border-t-transparent"
           ></div>
