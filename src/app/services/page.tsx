@@ -10,7 +10,6 @@ export default function Services() {
   const [currService, setCurrService] = useState(0);
 
   const serviceData = data.serviceOfferings;
-  console.log(currService);
 
   return (
     <>
