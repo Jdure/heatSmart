@@ -3,14 +3,19 @@
 import { useState } from "react";
 import { Pagination } from "../components/Pagination";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import data from "../../../data/services.json";
 
 export default function Services() {
   const [hovered, setHovered] = useState(false);
+  const [currService, setCurrService] = useState(0);
+
+  const serviceData = data.serviceOfferings;
+  console.log(currService);
 
   return (
     <>
       <h1 className="text-2xl text-center font-bold pt-12">Our Services</h1>
-      <div className="container flex flex-col relative h-screen ">
+      <div className="container flex flex-col relative h-screen">
         <div
           className={`flex flex-col p-2 items-center justify-center ${
             hovered ? "h-1/2" : "h-1/3"
@@ -18,22 +23,29 @@ export default function Services() {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <h2 className="text-xl font-medium">
-            Driveway Heating System Installation
+          <h2 className="phone:text-base tablet:text-lg font-medium">
+            {serviceData[currService].title}
           </h2>
           <p
             className={`text-lg text-justify w-11/12 ${
               hovered ? "opacity-100 " : "opacity-0 hidden"
             } transition-opacity duration-1000 delay-500 ease-in-out `}
           >
-            Experience the ultimate solution for a hassle-free winter with our
-            cutting-edge driveway heating systems. Say goodbye to snow and ice,
-            as our innovative technology keeps your driveway warm and clear.
-            Embrace convenience and safety with our reliable and efficient
-            solutions for a seamless winter experience.
+            {serviceData[currService].description}
           </p>
           <div className={`${hovered ? "block" : "hidden"}`}>
-            <Pagination pageIdx={"1"} maxLength={"1"} />
+            <Pagination
+              pageIdx={currService + 1}
+              maxLength={serviceData.length}
+              prevBtn={() =>
+                currService != 0 ? setCurrService(currService - 1) : null
+              }
+              nextBtn={() =>
+                currService === serviceData.length - 1
+                  ? null
+                  : setCurrService(currService + 1)
+              }
+            />
           </div>
           <MdKeyboardArrowDown
             className={`text-3xl animate-bounce ${

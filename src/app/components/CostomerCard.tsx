@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ServiceCard = ({
+export const CostomerCard = ({
   title,
   desc,
   icon,

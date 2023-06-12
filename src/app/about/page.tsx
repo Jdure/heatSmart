@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { ServiceCard } from "../components/ServiceCard";
+import { CostomerCard } from "../components/CostomerCard";
 import data from "../../../data/customers.json";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,7 +18,7 @@ export default function About() {
   });
   const isVisible = !!entry?.isIntersecting;
 
-  const serviceData = data.customerBase;
+  const customerData = data.customerBase;
 
   const loadMoreData = () => {
     if (screen?.width !== undefined) {
@@ -32,7 +32,7 @@ export default function About() {
     }
   }, [isVisible]);
 
-  const visibleServiceData = serviceData.slice(0, arrIdx);
+  const visibleCustomerData = customerData.slice(0, arrIdx);
 
   return (
     <>
@@ -84,8 +84,8 @@ export default function About() {
         Who we serve
       </h2>
       <div className="container grid grid-cols-1 gap-4 tablet:grid-cols-2 laptop:grid-cols-3 laptop:mx-auto">
-        {visibleServiceData.map((value, index) => (
-          <ServiceCard
+        {visibleCustomerData.map((value, index) => (
+          <CostomerCard
             key={index}
             title={value.title}
             desc={value.description}
@@ -93,7 +93,7 @@ export default function About() {
           />
         ))}
       </div>
-      {arrIdx <= serviceData.length ? (
+      {arrIdx <= customerData.length ? (
         <div id="loading" className="mx-auto">
           <div
             ref={refDiv}

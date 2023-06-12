@@ -4,13 +4,17 @@ import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 export const Pagination = ({
   pageIdx,
   maxLength,
+  prevBtn,
+  nextBtn,
 }: {
-  pageIdx: string;
-  maxLength: string;
+  pageIdx: string | number;
+  maxLength: string | number;
+  prevBtn: () => void;
+  nextBtn: () => void;
 }) => {
   return (
     <div className="inline-flex items-center justify-center mx-auto gap-3">
-      <button>
+      <button onClick={prevBtn}>
         <MdNavigateBefore className="text-2xl" />
       </button>
 
@@ -20,7 +24,7 @@ export const Pagination = ({
         {maxLength}
       </p>
 
-      <button>
+      <button onClick={nextBtn}>
         <MdNavigateNext className="text-2xl" />
       </button>
     </div>
