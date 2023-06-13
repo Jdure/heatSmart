@@ -15,17 +15,17 @@ export const Pagination = ({
   return (
     <div className="inline-flex items-center justify-center mx-auto gap-3">
       <button onClick={prevBtn}>
-        <MdNavigateBefore className="text-2xl" />
+        <MdNavigateBefore className="text-2xl tablet:text-3xl laptop:text-4xl" />
       </button>
 
-      <p className="text-lg text-hue-base">
+      <p className="text-lg tablet:text-xl laptop:text-2xl text-hue-base">
         {pageIdx}
         <span className="mx-0.25">/</span>
         {maxLength}
       </p>
 
       <button onClick={nextBtn}>
-        <MdNavigateNext className="text-2xl" />
+        <MdNavigateNext className="text-2xl tablet:text-3xl laptop:text-4xl" />
       </button>
     </div>
   );
