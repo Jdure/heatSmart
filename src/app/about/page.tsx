@@ -51,16 +51,6 @@ export default function About() {
           reliability. Our commitment to quality and customer satisfaction is at
           the core of everything we do.
         </p>
-        {/* <p>
-          Join us on this journey as we revolutionize winter comfort and safety,
-          one driveway at a time.
-        </p>
-        <LinkButton
-          btnTxt={"Get a Quote"}
-          path={"/requests"}
-          btnColor={"bg-hue-secondary"}
-          txtColor={"text-hue-base"}
-        /> */}
       </div>
       <div className="text-hue-base bg-hue-accent z-40">
         <div className="container px-5 py-24 mx-auto">
