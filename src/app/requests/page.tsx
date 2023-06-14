@@ -34,11 +34,11 @@ export default function Requests() {
 
   return (
     <>
+      <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center laptop:text-start laptop:ml-3">
+        Let&apos;s get to work!
+      </h1>
       <div className="container flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row tablet:min-w-fit">
         <div className="flex flex-col items-center laptop:items-start phone:basis-1/2 space-y-6 tablet:basis-3/5 phone:w-11/12 tablet:m-1.5  phone:text-center laptop:text-justify text-base tablet:text-lg laptop:text-xl desktop:text-2xl">
-          <h1 className="text-2xl text-center font-bold pt-12 tablet:text-2xl laptop:text-4xl desktop:text-6xl">
-            Let&apos;s get to work!
-          </h1>
           <p>
             To get started, please fill out the form below with your contact
             details and project requirements.
@@ -52,7 +52,7 @@ export default function Requests() {
           </p>
           <div className="bg-[url('https://dummyimage.com/720x720')] hidden tablet:block bg-cover bg-center h-72 w-full rounded-md"></div>
         </div>
-        <div className="flex flex-col items-center w-4/6 min-w-xs pt-6 phone:pt-8 phone:basis-2/5 tablet:basis-1/4 tablet:h-screen tablet:justify-center">
+        <div className="flex flex-col items-center w-4/6 min-w-xs phone:pt-6 tablet:pt-0 phone:basis-2/5 tablet:basis-1/4 tablet:h-screen laptop:h-fit tablet:justify-center laptop:justify-start">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col bg-stone-600 text-hue-inverted shadow-md rounded phone:px-8 phone:pt-6 phone:pb-8 phone:mb-4 phone:text-base tablet:m-6 laptop:m-8 laptop:text-lg desktop:text-2xl phone:space-y-6"

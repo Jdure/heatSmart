@@ -24,7 +24,9 @@ export const NavBar = () => {
   return (
     <>
       <div
-        className={`absolute inset-0 ${open ? "z-50" : "z-40"} text-hue-base`}
+        className={`absolute tablet:hidden inset-0 ${
+          open ? "z-50" : "z-40"
+        } text-hue-base`}
       >
         <Transition
           show={open}
@@ -71,7 +73,7 @@ export const NavBar = () => {
               {pages.map(([title, url]) => (
                 <Link
                   key={title}
-                  className="text-xl font-medium uppercase hover:animate-pulse"
+                  className="text-lg font-light capitalize hover:animate-pulse"
                   href={url}
                   onClick={() => isOpen(false)}
                 >
@@ -81,6 +83,22 @@ export const NavBar = () => {
             </nav>
           )}
         </Transition>
+      </div>
+      <div className="hidden tablet:flex tablet:flex-wrap tablet:p-5 tablet:flex-row items-center">
+        <a className="flex title-font font-medium items-center text-gray-900 mb-4 tablet:mb-0">
+          <Image src={"/fake-logo.svg"} height={75} width={75} alt="logo" />
+        </a>
+        <nav className="tablet:mr-auto tablet:ml-4 tablet:py-1 tablet:pl-4 tablet:border-l tablet:border-gray-400	flex flex-wrap items-center text-base desktop:text-lg justify-center">
+          {pages.map(([title, url]) => (
+            <Link
+              key={title}
+              className="mr-5 font-light capitalize hover:animate-pulse"
+              href={url}
+            >
+              {title}
+            </Link>
+          ))}
+        </nav>
       </div>
     </>
   );
