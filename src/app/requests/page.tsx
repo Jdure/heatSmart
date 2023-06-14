@@ -35,7 +35,7 @@ export default function Requests() {
   return (
     <>
       <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center laptop:text-start laptop:ml-3">
-        Let&apos;s get to work!
+        Free Quote
       </h1>
       <div className="container flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row tablet:min-w-fit">
         <div className="flex flex-col items-center laptop:items-start phone:basis-1/2 space-y-6 tablet:basis-3/5 phone:w-11/12 tablet:m-1.5  phone:text-center laptop:text-justify text-base tablet:text-lg laptop:text-xl desktop:text-2xl">
