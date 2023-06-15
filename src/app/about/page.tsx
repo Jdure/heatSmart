@@ -39,7 +39,7 @@ export default function About() {
       <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center laptop:text-start laptop:ml-3">
         Our Approach
       </h1>
-      <div className="container flex flex-col phone:items-center phone:justify-evenly phone:text-justify laptop:items-start phone:text-base tablet:text-lg laptop:text-xl laptop:ml-3 desktop:text-2xl phone:w-11/12 phone:space-y-6 z-40">
+      <div className="flex flex-col phone:items-center phone:justify-evenly phone:text-justify laptop:items-start phone:text-base tablet:text-lg laptop:text-xl laptop:ml-3 desktop:text-2xl phone:w-11/12 phone:space-y-6 z-40">
         <p>
           At HeatSmart Solutions, we are driven by our passion for providing
           innovative driveway heating solutions that transform winter

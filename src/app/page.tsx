@@ -5,7 +5,7 @@ import { MdOutlineMail, MdPhone } from "react-icons/md";
 export default function Home() {
   return (
     <>
-      <div className="container desktop:mx-auto flex phone:flex-col laptop:flex-row-reverse tablet:items-center laptop:justify-between phone:py-8 text-start tablet:text-center z-40 ">
+      <div className="container desktop:mx-auto flex phone:flex-col laptop:flex-row-reverse tablet:items-center laptop:justify-between  phone:py-8 text-start tablet:text-center z-40 ">
         <Image
           src="https://dummyimage.com/720x600"
           height={500}
@@ -48,9 +48,9 @@ export default function Home() {
             solutions for a seamless winter experience.
           </p>
         </div>
-        <div className="bg-[url('https://dummyimage.com/720x720')] bg-cover bg-center h-80 w-full"></div>
+        <div className="bg-[url('https://dummyimage.com/720x720')] bg-cover bg-center h-80 laptop:h-96 w-full"></div>
       </div>
-      <div className="container flex flex-col phone:text-base tablet:text-lg laptop:text-xl desktop:text-2xl items-start justify-evenly p-2 phone:space-y-4 laptop:space-y-6 laptop:pt-16 laptop:mx-3">
+      <div className="flex flex-col phone:text-base tablet:text-lg laptop:text-xl desktop:text-2xl items-start justify-start p-2 phone:space-y-4 laptop:space-y-6 laptop:pt-16 laptop:mx-3 desktop:ml-20">
         <h2 className="font-medium phone:text-xl tablet:text-2xl laptop:text-3xl desktop:text-5xl">
           Contact Us
         </h2>
