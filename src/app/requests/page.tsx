@@ -1,5 +1,14 @@
 "use client";
 
+/**
+ * TODO:
+ * 1. Setup Pocketbase DB - https://pocketbase.io/docs/
+ * 2. Create Request collection
+ * 3. Add new request
+ * 4. Integrate AWS SES for emails
+ */
+
+
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
