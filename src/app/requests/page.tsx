@@ -37,8 +37,8 @@ export default function Requests() {
       <h1 className="pt-12 font-bold phone:text-xl tablet:text-2xl laptop:text-4xl desktop:text-6xl phone:text-center laptop:text-start laptop:ml-3">
         Free Quote
       </h1>
-      <div className="flex flex-col items-center justify-start phone:max-h-fit z-40 tablet:flex-row tablet:min-w-fit">
-        <div className="flex flex-col items-center laptop:items-start phone:basis-1/2 space-y-6 tablet:basis-3/5 phone:w-11/12 tablet:m-1.5  phone:text-center laptop:text-justify text-base tablet:text-lg laptop:text-xl desktop:text-2xl">
+      <div className="flex flex-col items-center justify-start laptop:justify-evenly phone:max-h-fit laptop:h-screen z-40 tablet:flex-row tablet:min-w-fit ">
+        <div className="flex flex-col items-center laptop:items-start laptop:justify-evenly phone:basis-1/2 space-y-6 tablet:basis-3/5 phone:w-11/12 tablet:m-1.5  phone:text-center laptop:text-justify text-base tablet:text-lg laptop:text-xl desktop:text-2xl">
           <p>
             To get started, please fill out the form below with your contact
             details and project requirements.
