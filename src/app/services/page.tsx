@@ -1,5 +1,4 @@
 import PocketBase from "pocketbase";
-import data from "../../../data/services.json";
 import MobileServiceCard from "../components/MobileServiceCard";
 import LaptopServiceCard from "../components/LaptopServiceCard";
 
@@ -18,8 +17,6 @@ async function getData() {
 }
 
 export default async function Services() {
-  const serviceData = data.serviceOfferings;
-
   const services: ServiceRecord[] = await getData();
 
   return (

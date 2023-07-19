@@ -10,7 +10,10 @@
 
 
 import React from "react";
+import PocketBase from "pocketbase";
 import { useForm, SubmitHandler } from "react-hook-form";
+
+async function CreateRequest() {}
 
 enum ServiceEnum {
   driveway = "Driveway Heating System Installation",
@@ -31,14 +34,18 @@ type Inputs = {
   date: Date | string;
 };
 
-export default function Requests() {
+export default async function Requests() {
+  const pb = new PocketBase("http://127.0.0.1:8090");
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) =>
+    await pb.collection("client_request").create(data);
+  // const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   const today = new Date().toISOString().split("T")[0];
 
   return (
